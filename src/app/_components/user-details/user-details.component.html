@@ -1,0 +1,51 @@
+<!--h2>User Details</h2> 
+
+<hr/>
+<div *ngIf="let user of user | async">
+  <div>
+    <label><b>Id: </b></label> {{user.id}}
+  </div>
+  <div>
+    <label><b>Username: </b></label> {{user.username}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{user.email}}
+  </div>
+  <div>
+    <label><b>Roles: </b></label> {{user.roles}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to User List</button><br-->
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>User Details</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Roles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of user | async">
+          <td>{{user.id}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.roles}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to User List</button><br>

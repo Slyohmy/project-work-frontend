@@ -1,0 +1,17 @@
+:root {
+  --bs-light: #fff;
+  --bs-black: #0e0e0e;
+  --bs-dark: #121212;
+}
+
+html, body
+  {
+   margin:0px;
+   height:100%;
+   width:100%;
+   background:url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).webp")no-repeat center center fixed; 
+   -webkit-background-size:cover;
+   -o-background-size:cover;
+   -moz-background-size:cover;
+   background-size:cover;
+  }
