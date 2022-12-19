@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 const USER_KEY = 'auth-user';
 
@@ -8,11 +9,8 @@ const USER_KEY = 'auth-user';
 export class StorageService {
   constructor() {}
 
-  clean(): void {
+  public clean(): void {
     window.sessionStorage.clear();
-    window.location.reload();
-    window.localStorage.clear();
-    window.sessionStorage.removeItem(USER_KEY);
   }
 
   public saveUser(user: any): void {

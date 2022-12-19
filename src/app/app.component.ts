@@ -27,7 +27,8 @@ export class AppComponent {
     private storageService: StorageService,
     private authService: AuthService,
     private eventBusService: EventBusService
-  ) {}
+  ) {
+ }
 
   ngOnInit(): void {
     this.isLoggedIn = this.storageService.isLoggedIn();
@@ -57,6 +58,7 @@ export class AppComponent {
       },
       error: err => {
         console.log(err);
+        this.storageService.clean();
       }
     });
   }
