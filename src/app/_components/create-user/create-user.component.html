@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <div class="card card-container">
-<h3>Create User</h3>
+<h3 class="mx-auto">Create User</h3>
   <form 
   *ngIf="!isSuccessful"
   name="form"
@@ -60,7 +60,7 @@
     />
     </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success mx-auto">Submit</button>
 
     <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
       Signup failed!<br />{{ errorMessage }}

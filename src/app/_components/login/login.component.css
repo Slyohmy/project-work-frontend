@@ -30,3 +30,10 @@ label {
     -webkit-border-radius: 50%;
     border-radius: 50%;
   }
+
+  button {
+    display: flex;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
