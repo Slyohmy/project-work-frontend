@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend-container
-          image: docker.io/slyohmy/frontend:latest
+          image: docker.io/slyohmy/project-work-frontend:latest
           ports:
             - containerPort: 4200
           resources: {}
