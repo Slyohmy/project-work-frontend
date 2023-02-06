@@ -12,10 +12,9 @@ spec:
       targetPort: 4200
   selector:
     io.kompose.service: frontend
-  type: ClusterIP
-  network:
-    name: backend-network
+network:
+  name: project-work-network
   networkAlias:
-    - frontend-api
+    - frontend
 status:
   loadBalancer: {}
