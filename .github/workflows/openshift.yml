@@ -7,7 +7,7 @@ env:
   OPENSHIFT_NAMESPACE: ${{ secrets.OPENSHIFT_NAMESPACE }}
 
   APP_NAME: ""
-  APP_PORT: ""
+  APP_PORT: "4200"
 
   IMAGE_REGISTRY: docker.io/slyohmy
   IMAGE_REGISTRY_USER: slyohmy
