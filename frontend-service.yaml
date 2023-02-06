@@ -13,8 +13,8 @@ spec:
   selector:
     io.kompose.service: frontend
   type: ClusterIP
-network:
-  name: backend-network
+  network:
+    name: backend-network
   networkAlias:
     - frontend-api
 status:
