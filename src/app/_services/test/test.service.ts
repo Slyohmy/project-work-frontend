@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getPublicContent(): Observable<any> {
-    return this.http.get(OPENSHIFT_API + '', { responseType: 'text' });
+    return this.http.get(OPENSHIFT_API + 'home', { responseType: 'text' });
   }
 
   getUserBoard(): Observable<any> {

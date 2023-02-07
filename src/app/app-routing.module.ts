@@ -22,8 +22,8 @@ const routes: Routes = [
   { path: 'create', component: CreateUserComponent },
   { path: 'update/:id', component: UpdateUserComponent },
   { path: 'details/:id', component: UserDetailsComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '', redirectTo: 'user', pathMatch: 'full' }  
+  { path: 'home', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', redirectTo: 'user', pathMatch: 'full' }  
 ];
 
 @NgModule({
