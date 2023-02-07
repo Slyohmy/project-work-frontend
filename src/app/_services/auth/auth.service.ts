@@ -7,9 +7,8 @@ const OPENSHIFT_AUTH_API = 'https://api-slymo-dev.apps.sandbox-m3.1530.p1.opensh
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*'
-  })
+    'Content-Type': 'application/json'
+    })
 };
 
 @Injectable({
