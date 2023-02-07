@@ -5,7 +5,10 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8080/api/v1/auth/';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*'
+  })
 };
 
 @Injectable({
