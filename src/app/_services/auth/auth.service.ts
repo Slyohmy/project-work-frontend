@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const AUTH_API = 'http://localhost:8080/api/v1/auth/';
+const AUTH_OPENSHIFT_API = 'https://api-slymo-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/api/v1/auth/';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -19,7 +20,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<any> {
     return this.http.post(
-      AUTH_API + 'login',
+      AUTH_OPENSHIFT_API + 'login',
       {
         username,
         password,
@@ -30,7 +31,7 @@ export class AuthService {
 
   register(username: string, email: string, password: string): Observable<any> {
     return this.http.post(
-      AUTH_API + 'register',
+      AUTH_OPENSHIFT_API + 'register',
       {
         username,
         email,
@@ -42,7 +43,7 @@ export class AuthService {
 
   logout(): Observable<any> {
     return this.http.post(
-      AUTH_API + 'logout',
+      AUTH_OPENSHIFT_API + 'logout',
        { }, httpOptions);
   }
 }
