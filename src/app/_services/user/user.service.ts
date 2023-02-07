@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from 'src/app/_models/user.model';
 
 const USER_API = 'http://localhost:8080/api/v1/user/';
+const OPENSHIFT_USER_API = 'https://api-slymo-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/api/v1/user/';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -16,11 +17,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>(USER_API + `users`);
+    return this.http.get<User[]>(OPENSHIFT_USER_API + `users`);
   }
 
   getUserById(id: any): Observable<any> {
-    return this.http.get<any>( `${USER_API}${id}`) ;
+    return this.http.get<any>( `${OPENSHIFT_USER_API}${id}`) ;
   }
 
   /*create(data: any): Observable<any> {
@@ -29,7 +30,7 @@ export class UserService {
 
   create(username: string, email: string, password: string, role: string[]): Observable<any> {
     return this.http.post(
-      USER_API + 'register',
+      OPENSHIFT_USER_API + 'register',
       {
         username,
         email,
@@ -41,7 +42,7 @@ export class UserService {
   }
 
   update(id: number, data: any): Observable<any> {
-    return this.http.put(`${USER_API}update_profile/${id}`, data);
+    return this.http.put(`${OPENSHIFT_USER_API}update_profile/${id}`, data);
   }
 
   /*update(id: number, username: string, email: string, password: string): Observable<any> {
@@ -57,7 +58,7 @@ export class UserService {
   }*/
 
   delete(id: number): Observable<any> {
-    return this.http.delete(`${USER_API}delete/${id}`);
+    return this.http.delete(`${OPENSHIFT_USER_API}delete/${id}`);
   }
 }
 
