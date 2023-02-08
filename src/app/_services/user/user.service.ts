@@ -15,11 +15,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>(environment.API_URL + `users`);
+    return this.http.get<User[]>(environment.API_URL + `user/users`);
   }
 
   getUserById(id: any): Observable<any> {
-    return this.http.get<any>( `${environment.API_URL}${id}`) ;
+    return this.http.get<any>( `${environment.API_URL}user/${id}`) ;
   }
 
   /*create(data: any): Observable<any> {
