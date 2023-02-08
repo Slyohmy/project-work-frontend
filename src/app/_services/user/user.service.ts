@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/_models/user.model';
-
-const USER_API = 'http://localhost:8080/api/v1/user/';
-const OPENSHIFT_USER_API = 'https://api-slymo-dev.apps.sandbox-m3.1530.p1.openshiftapps.com/api/v1/user/';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -17,11 +15,11 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<User[]> {
-    return this.http.get<User[]>(OPENSHIFT_USER_API + `users`);
+    return this.http.get<User[]>(environment.API_URL + `users`);
   }
 
   getUserById(id: any): Observable<any> {
-    return this.http.get<any>( `${OPENSHIFT_USER_API}${id}`) ;
+    return this.http.get<any>( `${environment.API_URL}${id}`) ;
   }
 
   /*create(data: any): Observable<any> {
@@ -30,7 +28,7 @@ export class UserService {
 
   create(username: string, email: string, password: string, role: string[]): Observable<any> {
     return this.http.post(
-      OPENSHIFT_USER_API + 'register',
+      environment.API_URL + 'user/register',
       {
         username,
         email,
@@ -42,7 +40,7 @@ export class UserService {
   }
 
   update(id: number, data: any): Observable<any> {
-    return this.http.put(`${OPENSHIFT_USER_API}update_profile/${id}`, data);
+    return this.http.put(`${environment.API_URL}user/update_profile/${id}`, data);
   }
 
   /*update(id: number, username: string, email: string, password: string): Observable<any> {
@@ -58,7 +56,7 @@ export class UserService {
   }*/
 
   delete(id: number): Observable<any> {
-    return this.http.delete(`${OPENSHIFT_USER_API}delete/${id}`);
+    return this.http.delete(`${environment.API_URL}user/delete/${id}`);
   }
 }
 
